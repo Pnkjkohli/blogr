@@ -33,6 +33,38 @@
     color: #ff8f70;
 }
 
+.mTB{
+ margin: 60px 0px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.flex h2{
+    font-size: 24px;
+    line-height: 1.6;
+    color: #1f3f5b;
+    font-weight: 400;
+}
+.flex p{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #7f8c8d;
+    font-weight: 300;
+}
+.flexGap{
+    gap: 40px;
+}
+.bgImgMobile{
+    display: none;
+}
+.ThirdBg{
+    display: none;
+}
+
 .header_container{
     display: flex;
     justify-content: space-around;
@@ -131,26 +163,21 @@
 }
 
 .SectionAboutImg{
-    overflow-x: hidden;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 .SectionAboutImg img{
     display: flex;
     position: relative;
-    left: 0;
-    width: 700px;
+    left: 25%;
+    width: 45rem;
     height: auto;
 }
-.SectionfourthImg{
-    overflow-x: hidden;
-}
-.SectionfourthImg img{
-    display: flex;
-    position: relative;
-    right: 20%;
-    width: 70%;
-    height: auto;
-}
+
 .SectionAboutText{
     position: relative;
     left: 13%;
@@ -170,34 +197,32 @@
     background-size: 38rem;
 }
 .design_title{
-   
-    text-align: end;
-    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0px;
+}
+.design_title h1{
+    font-size: 32px;
+    font-weight: 400;
+    color: #1f3f5b;
 }
 .designed_container{
-    width: 92%;
-    
-/*    
-    padding: 50px 0px 30px 62px;
-    margin: 50px 0px 50px 62px; */
-    position: relative;
-    left: 15%;
+      position: relative;
+      left: 13%;
+      width: 85%;
 }
 .design_text{
-    margin: 50px;
     width: 72%;
 }
 
-.secondSection{
-    display: grid;
-    grid-template-columns: 60% 40%;
-}
-.design_text p {
-    margin-top: 10px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #7f8c8d;
-}
+.second{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} 
 
 /* third section */
 .state{
@@ -215,66 +240,25 @@
     width: 80%;
 }
 .third_section{
-    /* width: 100%;
+    width: 100%;
     position: relative;
-    height: 60vh; */
-    /* left: 10%; */
-    /* background-color: #1f3f5b; */
-
-}
-
-
-/* .state{
-    position: absolute;
-    display: grid;
-    grid-template-columns: 60% 40%;
-
-}
-.third_section {
+    height: 60vh;
     background-color: #1f3f5b;
-    position: relative;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    height: 60vh;
-    margin-top: 5%;
 
-   
 }
-.state_right{
-    background-image: url(images/bg-pattern-circles.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 38rem;
-    height: 60vh;
-}
-.state_right img {
-    position: absolute;
-    top: -45%;
-}
-.state_text{
-    color: #c8c8cb;
-    margin-top: 10%;
-} */
+
 /* last section */
 
   
   .features-content {
-    /* flex: 1; */
     position: relative;
-    /* left: 0; */
     right: 15%;
     width: 85%;
 
   }
   
   .feature-item {
-    margin-bottom: 30px;
-  }
-  
-  .feature-item h3 {
-    font-size: 1.5rem;
-    color: #2c3e50; /* Adjust as needed */
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   
   .feature-item p {
@@ -285,17 +269,11 @@
 
 
 
-
-
-
-
-  /* ..... */
-
-
 .fourthSection{
     display: grid;
     grid-template-columns: 60% 40%;
     align-items: center;
+    padding: 45px 0px;
 }
 
 .fourthSectiontext{
@@ -304,11 +282,18 @@
     padding: 30px 0px 30px 0px
   
 }
+.SectionfourthImg{
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
 .SectionfourthImg img{
-display: flex;
+    display: flex;
     position: relative;
-    /* left: 0; */
-    width: 700px;
+    right: 18%;
+    width: 55rem;
     height: auto;
 }
 
@@ -350,6 +335,43 @@ margin-bottom: 20px;
 
 
 
+
+.sectionThird{
+    background-color: hsl(237, 17%, 21%);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+    height: 375px;
+    position: relative;
+    border-radius:  0 60px 0 60px;
+}
+.sectionThirdBgImg{
+    position: relative;
+    overflow: hidden;
+}
+.MainImg{
+    position: absolute;
+    z-index: 1;
+    width: 500px;
+    top: -50px;
+    left: 10%;
+}
+.bgImg{
+    position: absolute;
+    bottom: -38%;
+    left: -32%;
+}
+.sectionThirdText{
+    padding: 20px;
+    max-width: 600px;
+    position: relative;
+    top: 0px;
+    left: -20%;
+}
+.sectionThirdText h2{
+    font-size: 32px;
+    color: #ffffff;
+}
 
 
 

@@ -6,9 +6,6 @@
     .header_button{
         display: none;
     }
-    .onlymobile{
-     display: block;
-    }
 
     .header_text {
         font-size: calc(16px + 6 * ((100vw - 320px) / 680));
@@ -29,9 +26,7 @@
     }
     .header_text_button {
         padding: 15px;
-        /* margin-bottom: 16px; */
-        display: flex
-    ;
+        display: flex;
         flex-direction: row;
         width: max-content;
         gap: 30px;
@@ -45,66 +40,99 @@
     }
     .secondSection {
         display: flex;
-        
         flex-direction: column;
+        margin: 50% 0;
     }
     .design_title h1{
-        /* text-align: center; */
-        /* position: relative;
-        right: 18px; */
         width: max-content;
-        position: relative;
-        right: 22px;
+        right: 0px;
     }
-    
-
-    .SectionAboutImg img{
+    .onlymobile{
+        display: flex;
+        justify-content: center;
+        width: 85%;
+    }
+    .SectionAboutImg{
         display: none;
-        
     }
-    .SectionAboutImg_mobile img{
+    .design_text {
         width: 100%;
+    }
+    .flex h2{
+        text-align: center;
+    }
+    .flex p{
+        text-align: center;
     }
 
     /* third section */
 
-    .state {
+    .sectionThird {
+        background-color: hsl(237, 17%, 21%);
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        height: 500px;
+        position: relative;
+        border-radius: 0 120px 0 120px;
+    }
+
+    .MainImg {
+        position: absolute;
+        z-index: 0;
+        width: 300px;
+        top: -22%;
+        left: 10%;
+    }
+    .bgImg {
+        display: none;
+    }
+
+    .sectionThirdText {
+        padding: 20px;
+        max-width: 600px;
+        position: relative;
+        top: 10%;
+        left: 0%;
+        display: block;
+        z-index: 1;
+    }
+    .sectionThirdText p {
+        color: #ffffff;
+    }
+    .ThirdBg{
+        overflow: hidden;
+    }
+    .bgImgMobile{
+        display: block;
+        width: 95%;
+        position: absolute;
+        bottom: 8%;
+        left: 2%;
+    }
+
+    .SectionfourthImg img{
+        display: none;
+    }
+
+    /* 4th  */
+
+    .fourthSection {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 78px;
-        padding: 20px 50px;
     }
-    .state_text{
-        margin: 50px;
-        width: 72%;
-    }
-    .state_image img{
-        width: 250px;
-        }
-    /* fourth section */
-    .fourthSection{
-        display: grid
-        ;
-            grid-template-columns: 30% 60%;
-    }
+
     .SectionfourthImg img{
-        display: none; 
+        display: none;
     }
-    .design_text h2{
-     margin-bottom: 5px;
-    }
-  
-    .SectionfourthImg_mobile img {
-        width: 302px;
-        height: auto;
+
+    .features-content {
         position: relative;
-        right: 25%;
+        right: 0%;
+        width: 100%;
     }
-        .SectionfourthImg_mobile onlymobile{
-        overflow-x: hidden;
-        }
-    
 
 
     /* footer */
@@ -170,7 +198,6 @@
     }
     .secondSection {
         display: flex;
-        
         flex-direction: column;
     }
     .design_title h1{
