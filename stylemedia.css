@@ -26,7 +26,7 @@
     }
     .header {
         display: flex;
-        gap: 200px !important;
+        gap: 157px !important;
     }
     .header_text_button {
         padding: 15px;
@@ -36,9 +36,23 @@
         gap: 30px;
     }
 
+    .forgotpassword {
+        font-size: 9px;
+    }
+
+    #submitbtn2 {
+        right: 4rem;
+    }
     .carousel-container{
         display: none;
     }
+    .onlymobile i {
+        font-size: 15px;
+        color: black;
+        /* color: white; */
+    }
+   
+
     /* second section */
 
     .designed_container {
@@ -57,7 +71,8 @@
     .onlymobile{
         display: flex;
         justify-content: center;
-        width: 85%;
+        width: 82%;
+        left: 25px;
     }
     .SectionAboutImg{
         display: none;
@@ -207,9 +222,9 @@
     }
 
 
-    i.fa {
+    /* i.fa {
         color: #000000;
-    }
+    } */
 
     #crossiconfa{
         display: none!important;
@@ -218,6 +233,9 @@
         display: none!important;
     }
 
+    #mobilecrossicon{
+        display: none!important;
+    }
     /* second section */
     .second {
         display: flex
@@ -306,11 +324,17 @@
     #mobile_navbar{
         display: none!important;
     }
+    #mobilecrossicon{
+        display: none!important;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1082px) { 
 /* third section */
 
+#mobilecrossicon{
+    display: none!important;
+}
 .sectionThird {
     background-color: hsl(237, 17%, 21%);
     display: grid;
@@ -331,6 +355,7 @@
 .bgImg {
     display: none;
 }
+
 
 .sectionThirdText {
     padding: 20px;
@@ -384,6 +409,9 @@ display: none;
     #mobile_navbar{
         display: none!important;
     }
+    #mobilecrossicon{
+        display: none!important;
+    }
 }
 
 @media (min-width: 1400px) and (max-width: 1440px){ 
@@ -401,6 +429,9 @@ display: none;
         display: none!important;
     }
     #mobile_navbar{
+        display: none!important;
+    }
+    #mobilecrossicon{
         display: none!important;
     }
 }

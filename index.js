@@ -43,22 +43,24 @@ var carousel_container = document.getElementById('carousel-container');
 var form = document.getElementById('form');
 var loginformfields = document.getElementById('loginformfields');
 
-var loginbtn = document.getElementById('loginbtn').addEventListener('click',function(){
+var loginbtn = document.getElementById('loginbtn').addEventListener('click',login);
+function login(){
   form.style.display='block';
   loginformfields.style.display='block';
   signupformfields.style.display='none';
-  main.style.filter = 'blur(3px)'; 
-  carousel_container.style.filter = 'blur(3px)'; 
-})
+  main.style.filter = 'blur(5px)'; 
+  carousel_container.style.filter = 'blur(5px)'; 
+   form.style.height = '27rem'; 
+}
 
 var crossicon = document.getElementById('crossicon');
 // var minimizeicon = document.getElementById('minimizeicon');
 crossicon.addEventListener('click',function(){
   console.log('clickclosemobilemenu'+this.id)
   form.style.display='none';
-  form.style.width = '40%';
-  form.style.height = '20rem'; 
-  form.style.right = '18rem'; 
+  // form.style.width = '40%';
+  // form.style.height = '24rem'; 
+  // form.style.right = '18rem'; 
   main.style.filter = 'none'; 
   carousel_container.style.filter = 'none';
   
@@ -89,15 +91,18 @@ var submitbtn=  document.getElementById('submitbtn');
 // signup form 
 
 var signupformfields= document.getElementById('signupformfields');
-var signupbtn = document.getElementById('signupbtn').addEventListener('click',function(){
+var signupbtn = document.getElementById('signupbtn').addEventListener('click',signup);
+function signup(){
   form.style.display='block';
   loginformfields.style.display='none';
   signupformfields.style.display='block';
-  main.style.filter = 'blur(3px)'; 
-  carousel_container.style.filter = 'blur(3px)'; 
-})
+  main.style.filter = 'blur(5px)'; 
+  carousel_container.style.filter = 'blur(5px)'; 
+  form.style.height = '30rem'; 
+}
+var allreadyaccountlogin = document.getElementById('allreadyaccountlogin').addEventListener('click',login);
 
-
+var donthaveanaccount= document.getElementById('donthaveanaccount').addEventListener('click',signup);
 
 // header  menu for mobile
 function menuFunction() {
@@ -122,7 +127,7 @@ document.getElementById('mobileloginbtn').addEventListener('click',function(){
   loginformfields.style.display='block';
   signupformfields.style.display='none';
   form.style.width='70%';
-  form.style.height = '20rem'; 
+  form.style.height = '27rem'; 
   form.style.right = '4rem'; 
   submitbtn.style.right= '4rem';
 });
@@ -133,7 +138,7 @@ var signupbtn = document.getElementById('mobilesignupbtn').addEventListener('cli
   loginformfields.style.display='none';
   signupformfields.style.display='block';
   form.style.width='70%';
-  form.style.height = '20rem'; 
+  form.style.height = '30rem'; 
   form.style.right = '4rem'; 
   submitbtn.style.right= '4rem';
   submitbtn2.style.right= '4rem';

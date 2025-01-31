@@ -26,9 +26,9 @@
                     <img src="images/logo.svg" alt="Blogr">
                 </div>
                 <div class="onlymobile" id="onlymobile">
-                    <i class="fa fa-bars" onclick="menuFunction()"></i>
+                    <i class="fa fa-bars" onclick="menuFunction()" style="color:white; font-size:24px"></i>
                 </div>
-                <div class="onlymobile" id="mobilecrossicon" style="display: none; color:white">
+                 <div id="mobilecrossicon" style="display: none; color:white; font-size:24px">
                     <i class="fa fa-times" ></i>
                 </div>
                 <div class="navbar">
@@ -53,9 +53,17 @@
                 </li>
                 <li class="nav_item">Company <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </li>
-                <li class="nav_item">Connect <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <li class="nav_item" id="connect">Connect <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </li>
             </ul>
+              <div id="innersideofconnect">
+                <li class="nav_item">Product
+                </li>
+                <li class="nav_item">Company
+                </li>
+                <li class="nav_item" id="connect">Connect
+                </li>
+              </div>
             <span class="line">
             </span>
 
@@ -89,15 +97,44 @@
           <i class="fa fa-window-maximize" aria-hidden="true" id="maximizeicon"></i> -->
         </div>
         <form action="" id="loginformfields">
-        <input type="text" placeholder="Username / Email" required><br>
-        <input type="password" placeholder="Password" required><br>
+            <div class="form_title">Login</div>
+            <label for="Username">Username / Email</label>
+
+        <div class="input_container">
+         <i class="fa fa-user icon"></i>
+         <input type="text"  placeholder="Enter your username / email" required><br>
+         </div>
+      
+         <label for="Password">Password</label>
+         <div class="input_container">
+            <i class="fa fa-key icon"></i>
+        <input type="password" placeholder="Enter your password" required><br>
+        </div>
+        <p class="forgotpassword"> Don't have an account? <span id="donthaveanaccount">Signup</span><br>
+            Forgot password?
+    </p>
         <input type = "submit" id="submitbtn" name = "Login" value = "Login" />
         </form>
 
         <form action="" id="signupformfields">
-          <input type="text" placeholder="Username"required><br>
-          <input type="text" placeholder="Email"required><br>
-          <input type="password" placeholder="Password"required><br>
+            <div class="form_title">Signup</div>
+            <label for="Username">Username</label><br>
+            <div class="input_container">
+                <i class="fa fa-user icon"></i>
+          <input type="text" placeholder="Enter your username"required><br>
+            </div>
+
+          <label for="Username">Email</label>
+          <div class="input_container">
+            <i class="fa fa-envelope icon"></i>
+          <input type="text" placeholder="Enter your email"required><br>
+        </div>
+          <label for="Username">Password</label>
+          <div class="input_container">
+            <i class="fa fa-key icon"></i>
+          <input type="password" placeholder="Enter your password"required><br>
+        </div>
+        <p class="forgotpassword">Allready have an account? <span id="allreadyaccountlogin">Login</span> </p>
           <input type = "submit" id="submitbtn2" name = "Sign up" value = "Sign up" /><br>
           
         </form>
