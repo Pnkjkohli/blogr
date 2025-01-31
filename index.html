@@ -12,19 +12,24 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <!-- first section -->
-    <div class="main">
+    <div class="main" id="main">
         <div class="header_container">
             <div class="header">
                 <div>
-                <img src="images/logo.svg" alt="Blogr">
+                    <img src="images/logo.svg" alt="Blogr">
                 </div>
-                <div class="onlymobile">
-                    <i class="fa fa-bars"></i>
+                <div class="onlymobile" id="onlymobile">
+                    <i class="fa fa-bars" onclick="menuFunction()"></i>
+                </div>
+                <div class="onlymobile" id="mobilecrossicon" style="display: none; color:white">
+                    <i class="fa fa-times" ></i>
                 </div>
                 <div class="navbar">
                     <ul class="nav-list">
@@ -33,14 +38,37 @@
                         <li class="nav-item">Connect <img src="./images/icon-arrow-light.svg" alt="Arrow"></li>
                     </ul>
                 </div>
-            
+
             </div>
-           
+
             <div class="header_button">
-                <button class="login btnFirst">Login</button>
-                <button class="btnSecond" type="submit">Sign Up</button>
+                <button class="login btnFirst" id="loginbtn">Login</button>
+                <button class="btnSecond" type="submit" id="signupbtn">Sign Up</button>
             </div>
         </div>
+
+        <div class="mobile_navbar onlymobile" style="display: none;" id="mobile_navbar">
+            <ul class="mobile_nav_ist">
+                <li class="nav_item">Product <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </li>
+                <li class="nav_item">Company <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </li>
+                <li class="nav_item">Connect <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </li>
+            </ul>
+            <span class="line">
+            </span>
+
+            <div class="mobile_btn">
+                
+                    <button class="login mobilefirsrbtn" id="mobileloginbtn">Login</button>
+                    <button class="signup mobilesecondbtn" type="submit" id="mobilesignupbtn">Sign Up</button>
+               
+            </div>
+        </div>
+
+       
+
         <div class="header_text">
             <h1>A modern publishing platform</h1>
             <p>Grow your audience and build your online brand</p>
@@ -51,7 +79,56 @@
         </div>
     </div>
 
-   
+  
+    </div>
+    
+    <div class="form" id="form" style="display: none;"> 
+        <div class="form_header">
+            <i class="fa fa-times" aria-hidden="true" id="crossicon"></i>
+            <!-- <i class="fa fa-window-minimize" aria-hidden="true" id="minimizeicon"></i>  
+          <i class="fa fa-window-maximize" aria-hidden="true" id="maximizeicon"></i> -->
+        </div>
+        <form action="" id="loginformfields">
+        <input type="text" placeholder="Username / Email" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <input type = "submit" id="submitbtn" name = "Login" value = "Login" />
+        </form>
+
+        <form action="" id="signupformfields">
+          <input type="text" placeholder="Username"required><br>
+          <input type="text" placeholder="Email"required><br>
+          <input type="password" placeholder="Password"required><br>
+          <input type = "submit" id="submitbtn2" name = "Sign up" value = "Sign up" /><br>
+          
+        </form>
+    </div>
+
+    <!-- crousal section  -->
+    <div class="carousel-container mTB" id="carousel-container">
+        <div class="carousel-item" id="image-show1" style="display: block;">
+          <img src="images/image-grid.jpg" alt="Image 1">
+        </div>
+        <div class="carousel-item" id="image-show2">
+          <img src="images/markus-spiske-zKvJXXbpsxI-unsplash.jpg" alt="Image 2">
+        </div>
+        <div class="carousel-item" id="image-show3">
+            <img src="images/markus-spiske-2OCW4iBf2Vw-unsplash.jpg" alt="Image 1">
+        </div>
+        <div class="carousel-item" id="image-show4">
+            <img src="images/markus-spiske-o6-RRJcIhGQ-unsplash.jpg" alt="Image 1">
+        </div>
+        
+        <div class="crousalbtn">
+        <img src="images/image-grid.jpg" style="height: 200px;" alt="Image 1" id="first"> 
+        <img src="images/markus-spiske-zKvJXXbpsxI-unsplash.jpg" style="height: 200px;" alt="Image 1" id="second"> 
+        <img src="images/markus-spiske-2OCW4iBf2Vw-unsplash.jpg" style="height: 200px;" alt="Image 1" id="third"> 
+        <img src="images/markus-spiske-o6-RRJcIhGQ-unsplash.jpg" style="height: 200px;" alt="Image 1" id="forth"> 
+
+        
+        </div>
+          
+    </div>
+
 
     <!-- designed section -->
     <div class="secondSection mTB">
@@ -60,7 +137,7 @@
         </div>
         <div class="second">
             <div class="designed_container flex flexGap">
-            
+
                 <div class="SectionAboutImg_mobile onlymobile">
                     <img src="images/illustration-editor-mobile.svg" alt="">
                 </div>
@@ -88,13 +165,13 @@
                 <img src="images/illustration-editor-desktop.svg" alt="">
             </div>
         </div>
-        
+
     </div>
-<!-- third section -->
+    <!-- third section -->
 
     <div class="sectionThird mTB">
         <div class="sectionThirdBgImg">
-            
+
             <img src="./images/bg-pattern-circles.svg" alt="" class="bgImg">
         </div>
         <div class="ThirdBg">
@@ -102,15 +179,15 @@
         </div>
         <div class="sectionThirdText flex">
             <h2>State of the Art Infrastructure</h2>
-                <p>With reliability and speed in mind, worldwide data centers provide the backbone for
-                    ultra-fast
-                    connectivity. This ensures your site will load instantly, no matter where your readers are,
-                    keeping your site competitive.
-                </p>
+            <p>With reliability and speed in mind, worldwide data centers provide the backbone for
+                ultra-fast
+                connectivity. This ensures your site will load instantly, no matter where your readers are,
+                keeping your site competitive.
+            </p>
         </div>
-        
+
         <img src="./images/illustration-phones.svg" alt="" class="MainImg">
-       
+
 
     </div>
 
@@ -122,7 +199,7 @@
         <div class="SectionfourthImg">
             <img src="images/illustration-laptop-desktop.svg" alt="">
         </div>
-        
+
         <div class="features-content flex flexGap">
             <div class="SectionfourthImg_mobile onlymobile">
                 <img src="images/illustration-laptop-mobile.svg" alt="">
@@ -143,48 +220,48 @@
                     capable of producing even the most complicated sites.</p>
             </div>
         </div>
-       
+
     </div>
 
     <footer class="footer">
 
-                <div class="footer_logo">
-                    <img src="./images/logo.svg" alt="Logo">
-                </div>
-               
-                <div class="footer_product">
-                    <h5 class="footer_title">Product</h5>
-                    <ul class="footer_list">
-                        <li><a href="#" class="footer_link">Overview</a></li>
-                        <li><a href="#" class="footer_link">Pricing</a></li>
-                        <li><a href="#" class="footer_link">Marketplace</a></li>
-                        <li><a href="#" class="footer_link">Features</a></li>
-                        <li><a href="#" class="footer_link">Integrations</a></li>
-                    </ul>
-                </div>
+        <div class="footer_logo">
+            <img src="./images/logo.svg" alt="Logo">
+        </div>
 
-                <div class="footer_company">
-                    <h5 class="footer_title">Company</h5>
-                    <ul class="footer_list">
-                        <li><a href="#" class="footer_link">About</a></li>
-                        <li><a href="#" class="footer_link">Team</a></li>
-                        <li><a href="#" class="footer_link">Blog</a></li>
-                        <li><a href="#" class="footer_link">Careers</a></li>
-                    </ul>
-                </div>
+        <div class="footer_product">
+            <h5 class="footer_title">Product</h5>
+            <ul class="footer_list">
+                <li><a href="#" class="footer_link">Overview</a></li>
+                <li><a href="#" class="footer_link">Pricing</a></li>
+                <li><a href="#" class="footer_link">Marketplace</a></li>
+                <li><a href="#" class="footer_link">Features</a></li>
+                <li><a href="#" class="footer_link">Integrations</a></li>
+            </ul>
+        </div>
 
-                <div class="footer_connect">
-                    <h5 class="footer_title">Connect</h5>
-                    <ul class="footer_list">
-                        <li><a href="#" class="footer_link">Contact</a></li>
-                        <li><a href="#" class="footer_link">Newsletter</a></li>
-                        <li><a href="#" class="footer_link">LinkedIn</a></li>
-                    </ul>
-                </div>
+        <div class="footer_company">
+            <h5 class="footer_title">Company</h5>
+            <ul class="footer_list">
+                <li><a href="#" class="footer_link">About</a></li>
+                <li><a href="#" class="footer_link">Team</a></li>
+                <li><a href="#" class="footer_link">Blog</a></li>
+                <li><a href="#" class="footer_link">Careers</a></li>
+            </ul>
+        </div>
 
-       
+        <div class="footer_connect">
+            <h5 class="footer_title">Connect</h5>
+            <ul class="footer_list">
+                <li><a href="#" class="footer_link">Contact</a></li>
+                <li><a href="#" class="footer_link">Newsletter</a></li>
+                <li><a href="#" class="footer_link">LinkedIn</a></li>
+            </ul>
+        </div>
+
+
     </footer>
-      
+    <script src="index.js"></script>
 </body>
 
 </html>

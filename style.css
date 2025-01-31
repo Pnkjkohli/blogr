@@ -109,6 +109,16 @@
     border: none;
  
 }
+.btnFirst:hover{
+    padding: 12px 25px;
+    background-color: #ffff;
+    color: #ff0000;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: #ffff 0.3s ease;  
+}
 .btnSecond {
     padding: 12px 25px;
     background-color: #ffffff;
@@ -128,6 +138,7 @@
     cursor: pointer;
     transition: #ffff 0.3s ease;
 }
+
 .header_text{
     display: flex;
     flex-direction: column;
@@ -136,8 +147,11 @@
         gap: 10px;
     padding: 65px;
     font-size: 1.8rem;
+    font-family: 'Overpass';
+    font-weight: 300;
 
 }
+
 .header_text_button{
     padding: 15px;
 
@@ -147,6 +161,232 @@
     font-size: 24px;
     color: white;
 }
+
+.mobile_navbar{
+    background-color: #ffffff;
+width: 21%;
+padding: 10px 0px;
+position: absolute;
+right: 27px;
+flex-direction: column;
+text-align: center;
+border: 1px solid #c8c8cb;
+height: 24rem;
+bottom: -13rem;
+}
+.mobile_nav_ist{
+    display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: #000000;
+        text-align: center;
+        align-items: center;
+        padding: 2rem;
+        list-style: none;
+
+}
+
+.mobilefirsrbtn{
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.mobilefirsrbtn:hover{
+    padding: 12px 25px;
+    background-color: #ffff;
+    color: #ff0000;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: #ffff 0.3s ease;  
+}
+
+.mobile_btn{
+    display: flex;
+        flex-direction: column;
+        width: 19rem;
+        align-items: center;
+}
+.mobilesecondbtn{
+    padding: 12px 25px;
+    background-color: #ff7a85;
+    
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;  
+}
+.mobilesecondbtn:hover {
+    padding: 12px 25px;
+    background-color: #ffff;
+    color: #ff0000;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: #ffff 0.3s ease;
+}
+.line{
+    border: 1px solid #c8c8cb50;
+    margin: 20px;
+    display: flex
+}
+
+/* crousal  */
+.carousel-container {
+    width:90%;
+    height: 100%;
+    /* overflow: hidden;     */
+    position: relative;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    text-align: center;
+    margin: 8rem 0rem;
+    right: -4rem;
+  }
+  
+  .carousel-item {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+  .carousel-item img {
+    border-radius: 40px;
+    object-fit: cover;
+    width: 70%;
+    height: 567px;
+    border: 5px solid #ff7a85;
+  }
+ .crousalbtn{ position: absolute;
+    right: 7rem;
+    bottom: 2rem;
+ }
+
+
+ .crousalbtn img{
+   
+    border-radius: 15px;
+    border: 5px solid #ff7a85;
+    cursor: pointer;
+ }
+
+  
+  .crousalbtn img:hover {
+    border: 5px solid #ff8f70;
+
+    }
+  
+/* login form  */
+
+/* .form{
+    width: 40%;
+    position: relative;
+    border: 2px solid #ffffff;
+    height: 17rem;
+    right: -30rem;
+    bottom: -3rem;
+    border-radius: 15px;
+
+} */
+.form {
+    width: 40%;
+    position: absolute;
+    border: 2px solid #ffffff;
+    height: 20rem;
+    top: 10rem;
+    right: 18rem;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(255,143,112,.8),  rgba(255,61,84,.9)) , url(images//bg-pattern-intro-desktop.svg) 80%  repeat;
+
+}
+.form_header {
+    background-color: #ff7a85;
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    flex-direction: row-reverse;
+    position: absolute;
+    right: 1rem;
+    top: -20px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+
+}
+    i.fa{
+        color: white;
+    }
+form{
+    padding: 2rem 4rem;
+    /* filter: blur(8px); */
+    /* backdrop-filter: blur(15px); */
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    margin:13px 0px;
+    border-radius: 15px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    text-align: center;
+    /* color: #ffffff; */
+}
+
+form input:hover{
+    background: #ff7a85;
+}
+#submitbtn{
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    right: 8rem;
+    color: #ffffff;
+}
+#submitbtn2{
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    right: 8rem;
+    color: #ffffff;
+}
+
+#crossicon:hover{
+    
+
+    color: #ff0000;
+ 
+ 
+    cursor: pointer;
+    
+}
+#minimizeicon:hover{
+    color:yellow;
+  
+
+    cursor: pointer;
+ 
+}
+#maximizeicon:hover{
+ 
+    color:green;
+   
+
+    cursor: pointer;
+ 
+}
+
+::placeholder {
+    color: #ffffff;
+
+  }
+
+
 
 /* second section */
 
