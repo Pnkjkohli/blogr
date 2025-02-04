@@ -86,6 +86,7 @@
     border-radius: 0 0 0 60px;
     background: linear-gradient(90deg, rgba(255,143,112,.8),  rgba(255,61,84,.9)) , url(images//bg-pattern-intro-desktop.svg) 30%  no-repeat;
     background-size: auto;
+    height: 500px;
 }
 
 
@@ -163,17 +164,17 @@
 }
 
 .mobile_navbar{
-    background-color: #ffffff;
-width: 21%;
+
 padding: 10px 0px;
+background-color: #ffffff;
 position: absolute;
 right: 27px;
 flex-direction: column;
 text-align: center;
 border: 1px solid #c8c8cb;
-height: 30rem;
-bottom: -15rem;
 }
+
+
 .mobile_nav_ist{
     display: flex;
         flex-direction: column;
@@ -355,6 +356,18 @@ form input{
     /* border-bottom: 1px solid #ffffff; */
     outline: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+{
+-webkit-background-clip: text;
+-webkit-text-fill-color: #fdfdfd;
+transition: background-color 5000s ease-in-out 0s;
+box-shadow: inset 0 0 20px 20px transparent;
+}
+
 input::placeholder{
     color: #ffffffbc;
 }
@@ -479,6 +492,7 @@ form label{
     background-color: #c8c8cb38;
     width: 87%;
     align-items: center;
+    color:#4b5862;
 }
 
 ::placeholder {

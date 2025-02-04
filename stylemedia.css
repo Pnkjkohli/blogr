@@ -13,7 +13,7 @@
 
     .header_text {
         /* text-align: center; */
-        padding: 50px 37px;
+        padding: 98px 37px;
         text-align: center;
         font-size: 16px;
     }
@@ -48,10 +48,13 @@
     }
     .onlymobile i {
         font-size: 15px;
-        color: black;
+        color: red;
         /* color: white; */
     }
    
+    .mobile_navbar{
+        z-index: 1;
+    }
 
     /* second section */
 
@@ -62,7 +65,7 @@
     .secondSection {
         display: flex;
         flex-direction: column;
-        margin: 50% 0;
+        /* margin: 50% 0; */
     }
     .design_title h1{
         width: max-content;
@@ -73,6 +76,8 @@
         justify-content: center;
         width: 82%;
         left: 25px;
+     
+
     }
     .SectionAboutImg{
         display: none;

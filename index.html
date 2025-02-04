@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -53,15 +54,15 @@
                 </li>
                 <li class="nav_item">Company <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </li>
-                <li class="nav_item" id="connect">Connect <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <li class="nav_item" id="connect">Connect <i class="fa fa-angle-down" aria-hidden="true" id="downicon"></i><i class="fa fa-angle-up" aria-hidden="true" id="upicon" style="display: none;"></i>
                 </li>
             </ul>
-              <div id="innersideofconnect">
-                <li class="nav_item">Product
+              <div id="innersideofconnect" style="display: none;">
+                <li class="nav_item">Contact
                 </li>
-                <li class="nav_item">Company
+                <li class="nav_item">Newsletter
                 </li>
-                <li class="nav_item" id="connect">Connect
+                <li class="nav_item" id="connect">LinkedIn
                 </li>
               </div>
             <span class="line">
@@ -96,19 +97,19 @@
             <!-- <i class="fa fa-window-minimize" aria-hidden="true" id="minimizeicon"></i>  
           <i class="fa fa-window-maximize" aria-hidden="true" id="maximizeicon"></i> -->
         </div>
-        <form action="" id="loginformfields">
+        <form action="#" id="loginformfields">
             <div class="form_title">Login</div>
             <label for="Username">Username / Email</label>
 
         <div class="input_container">
          <i class="fa fa-user icon"></i>
-         <input type="text"  placeholder="Enter your username / email" required><br>
+         <input type="text"  placeholder="Enter your username / email" id="loginUsername" required><br>
          </div>
       
          <label for="Password">Password</label>
          <div class="input_container">
             <i class="fa fa-key icon"></i>
-        <input type="password" placeholder="Enter your password" required><br>
+        <input type="password" placeholder="Enter your password" id="loginPassword" required><br>
         </div>
         <p class="forgotpassword"> Don't have an account? <span id="donthaveanaccount">Signup</span><br>
             Forgot password?
@@ -116,26 +117,26 @@
         <input type = "submit" id="submitbtn" name = "Login" value = "Login" />
         </form>
 
-        <form action="" id="signupformfields">
+        <form action="" method="post" id="signupformfields">
             <div class="form_title">Signup</div>
             <label for="Username">Username</label><br>
             <div class="input_container">
                 <i class="fa fa-user icon"></i>
-          <input type="text" placeholder="Enter your username"required><br>
+          <input type="text" placeholder="Enter your username" id="signupUsername" required><br>
             </div>
 
-          <label for="Username">Email</label>
+          <label for="Email">Email</label>
           <div class="input_container">
             <i class="fa fa-envelope icon"></i>
-          <input type="text" placeholder="Enter your email"required><br>
+          <input type="text" placeholder="Enter your email" id="signupEmail" required><br>
         </div>
-          <label for="Username">Password</label>
+          <label for="Password">Password</label>
           <div class="input_container">
             <i class="fa fa-key icon"></i>
-          <input type="password" placeholder="Enter your password"required><br>
+          <input type="password" placeholder="Enter your password" id="signupPassword" required><br>
         </div>
         <p class="forgotpassword">Allready have an account? <span id="allreadyaccountlogin">Login</span> </p>
-          <input type = "submit" id="submitbtn2" name = "Sign up" value = "Sign up" /><br>
+          <input type = "submit" id="submitbtn2" name = "Sign up"  value = "Sign up" /><br>
           
         </form>
     </div>

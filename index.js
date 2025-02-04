@@ -93,6 +93,8 @@ var submitbtn=  document.getElementById('submitbtn');
 var signupformfields= document.getElementById('signupformfields');
 var signupbtn = document.getElementById('signupbtn').addEventListener('click',signup);
 function signup(){
+  
+  signupformfields.reset();
   form.style.display='block';
   loginformfields.style.display='none';
   signupformfields.style.display='block';
@@ -143,3 +145,148 @@ var signupbtn = document.getElementById('mobilesignupbtn').addEventListener('cli
   submitbtn.style.right= '4rem';
   submitbtn2.style.right= '4rem';
 })
+
+
+// dropdown for mobile 
+var innersideofconnect = document.getElementById('innersideofconnect');
+var downicon = document.getElementById('downicon');
+var upicon = document.getElementById('upicon');
+
+var connect= document.getElementById('connect').addEventListener('click',function(){
+ if (innersideofconnect.style.display== 'none')
+ {
+  console.log('block'+this.id)
+  downicon.style.display='none';
+  upicon.style.display='block';
+  innersideofconnect.style.display='flex'
+ }
+
+  else{
+    console.log('hide'+this.id)
+    downicon.style.display='block';
+  upicon.style.display='none';
+   innersideofconnect.style.display='none'
+  }
+
+})
+
+// signupform data
+
+
+
+// document.getElementById('submitbtn2').addEventListener('click',function(){
+// console.log('signup-submit')
+
+// let signupUsername= document.getElementById('signupUsername').value;
+// let signupEmail= document.getElementById('signupEmail').value;
+
+// let signupPassword= document.getElementById('signupPassword').value;
+
+// console.log('signupUsername'+signupUsername);
+// return form;
+
+// })
+
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   form.getElementById('signupUsername');
+//  form.getElementById('signupEmail');
+//  form.getElementById('signupPassword');
+// });
+
+
+
+// signup form submission
+let signupform = document.getElementById('signupformfields');
+document.getElementById('submitbtn2').addEventListener('click', function(event){
+  event.preventDefault();// its prevent the default behaviour of the form  
+  if(validateForm()){
+
+  let username = document.getElementById('signupUsername').value;
+  let email = document.getElementById('signupEmail').value;
+  let password = document.getElementById('signupPassword').value;
+
+  console.log('Username:', username);
+  console.log('Email:', email);
+  console.log('Password:', password);
+
+
+
+  // localStorage.setItem('username', username);
+  // localStorage.setItem('email', email);
+  // localStorage.setItem('password', password);
+
+  // alert("Data has been saved in local storage.");
+
+  let data= {
+    username: username,
+    email: email,
+    password: password,
+
+  };
+
+  // let jsondata = JSON.stringify(data);
+  const JSONToFile = (obj, filename) => {
+    const blob = new Blob([JSON.stringify(obj, null, 2)], {
+      type: 'application/json',
+    });
+  // console.log(jsondata);
+
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a'); 
+  a.href = url;
+  a.download = `${filename}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+JSONToFile({ test: data }, 'testJsonFile');
+  }
+
+});
+
+
+// function abc(){
+// return 'hello world';
+// };
+
+// const A = () => {
+
+// };
+// const B = function abc(){
+
+// };
+// const C = function (){
+
+// };
+
+function validateForm() {
+  console.log(123);
+  var username = document.getElementById("signupUsername").value;
+  var email = document.getElementById("signupEmail").value;
+  var password = document.getElementById("signupPassword").value;
+
+
+  var usernameRegex = /^[A-Za-z\s]+$/;
+  if (!usernameRegex.test(username)) {
+      alert("Username should only contain letters and spaces.");
+      return false;
+  }
+
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+  if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+  }
+
+
+  if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return false;
+  }
+
+
+  return true;
+}
