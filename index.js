@@ -45,6 +45,9 @@ var loginformfields = document.getElementById('loginformfields');
 
 var loginbtn = document.getElementById('loginbtn').addEventListener('click',login);
 function login(){
+  loginformfields.reset();
+  document.getElementById("signupbtn").disabled = true;
+  document.getElementById("loginbtn").disabled = true;
   form.style.display='block';
   loginformfields.style.display='block';
   signupformfields.style.display='none';
@@ -53,14 +56,19 @@ function login(){
    form.style.height = '27rem'; 
 }
 
+var error = document.getElementById('error');
 var crossicon = document.getElementById('crossicon');
 // var minimizeicon = document.getElementById('minimizeicon');
 crossicon.addEventListener('click',function(){
   console.log('clickclosemobilemenu'+this.id)
+  document.getElementById("signupbtn").disabled = false;
+  document.getElementById("loginbtn").disabled = false;
   form.style.display='none';
+
   // form.style.width = '40%';
   // form.style.height = '24rem'; 
-  // form.style.right = '18rem'; 
+  // form.style.right = '18rem';
+   
   main.style.filter = 'none'; 
   carousel_container.style.filter = 'none';
   
@@ -90,10 +98,13 @@ var submitbtn=  document.getElementById('submitbtn');
 
 // signup form 
 
+
 var signupformfields= document.getElementById('signupformfields');
 var signupbtn = document.getElementById('signupbtn').addEventListener('click',signup);
 function signup(){
-  
+ 
+    document.getElementById("signupbtn").disabled = true;
+    document.getElementById("loginbtn").disabled = true;
   signupformfields.reset();
   form.style.display='block';
   loginformfields.style.display='none';
@@ -101,6 +112,7 @@ function signup(){
   main.style.filter = 'blur(5px)'; 
   carousel_container.style.filter = 'blur(5px)'; 
   form.style.height = '30rem'; 
+ 
 }
 var allreadyaccountlogin = document.getElementById('allreadyaccountlogin').addEventListener('click',login);
 
@@ -206,44 +218,47 @@ document.getElementById('submitbtn2').addEventListener('click', function(event){
   let email = document.getElementById('signupEmail').value;
   let password = document.getElementById('signupPassword').value;
 
-  console.log('Username:', username);
-  console.log('Email:', email);
-  console.log('Password:', password);
+  // console.log('Username:', username);
+  // console.log('Email:', email);
+  // console.log('Password:', password);
 
 
 
-  // localStorage.setItem('username', username);
-  // localStorage.setItem('email', email);
-  // localStorage.setItem('password', password);
+  localStorage.setItem('username', username);
+  localStorage.setItem('email', email);
+  localStorage.setItem('password', password);
 
   // alert("Data has been saved in local storage.");
 
-  let data= {
-    username: username,
-    email: email,
-    password: password,
+//   let data= {
+//     username: username,
+//     email: email,
+//     password: password,
 
-  };
+//   };
 
-  // let jsondata = JSON.stringify(data);
-  const JSONToFile = (obj, filename) => {
-    const blob = new Blob([JSON.stringify(obj, null, 2)], {
-      type: 'application/json',
-    });
-  // console.log(jsondata);
+//   // let jsondata = JSON.stringify(data);
+//   const JSONToFile = (obj, filename) => {
+//     const blob = new Blob([JSON.stringify(obj, null, 2)], {
+//       type: 'application/json',
+//     });
+//   // console.log(jsondata);
 
-  const url = URL.createObjectURL(blob);
+//   const url = URL.createObjectURL(blob);
 
-  const a = document.createElement('a'); 
-  a.href = url;
-  a.download = `${filename}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-};
+//   const a = document.createElement('a'); 
+//   a.href = url;
+//   a.download = `${filename}.json`;
+//   a.click();
+//   URL.revokeObjectURL(url);
+// };
 
-JSONToFile({ test: data }, 'testJsonFile');
+// JSONToFile({ test: data }, 'testJsonFile');
+// window.location.reload(true);
+window.open("file:///Users/poplify/Documents/project/blogr/dashbord.html")
+
   }
-
+ 
 });
 
 
@@ -266,27 +281,63 @@ function validateForm() {
   var username = document.getElementById("signupUsername").value;
   var email = document.getElementById("signupEmail").value;
   var password = document.getElementById("signupPassword").value;
-
+var signupusername = document.getElementById("signupUsername");
 
   var usernameRegex = /^[A-Za-z\s]+$/;
   if (!usernameRegex.test(username)) {
-      alert("Username should only contain letters and spaces.");
+      // alert("Username should only contain letters and spaces.");
+      // signupusername.style.display='none';
+     let usernameerror= document.getElementById('error').innerHTML='Username should only contain letters and spaces.';
+  
       return false;
   }
 
 
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
   if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
+      // alert("Please enter a valid email address.");
+      let emailerror= document.getElementById('error').innerHTML='Please enter a valid email address @gmail.com';
+
       return false;
   }
 
 
   if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
+      // alert("Password must be at least 6 characters long.");
+      let passworderror= document.getElementById('error').innerHTML='Password must be at least 6 characters long';
+
       return false;
   }
 
 
   return true;
 }
+
+
+
+// login form 
+var loginUsername= document.getElementById('loginUsername');
+var loginPassword= document.getElementById('loginPassword');
+console.log(loginUsername);
+console.log(loginPassword);
+
+   // stored data from the register-form
+   var storedName = localStorage.getItem('username');
+   var storedPw = localStorage.getItem('password');
+   var storedEmail = localStorage.getItem('email');
+   console.log(storedPw);
+   console.log(storedName);
+   console.log(storedEmail);
+   submitbtn.addEventListener('click', function(){
+
+     // check if stored data from register-form is equal to data from login form
+     if((loginUsername.value !== storedName && loginUsername.value !== storedEmail) || loginPassword.value !== storedPw) {
+      // alert('ERROR');
+      let error= document.getElementById('loginerror').innerHTML='Please enter a valid record ';
+
+      
+  }else {
+      // alert('You are loged in.');
+      window.open("file:///Users/poplify/Documents/project/blogr/dashbord.html")
+  }
+   });
