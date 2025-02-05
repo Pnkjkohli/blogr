@@ -728,3 +728,18 @@ font-weight: 400;
     color:#c8c8cb;
     text-decoration: none;
 }
+
+
+
+
+/* animation css  */
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+ 
+  .fade-in-visible {
+    opacity: 1;
+  }

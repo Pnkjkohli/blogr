@@ -341,3 +341,27 @@ console.log(loginPassword);
       window.open("file:///Users/poplify/Documents/project/blogr/dashbord.html")
   }
    });
+
+
+
+
+
+ 
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    
+      entry.target.classList.add('fade-in-visible');
+     
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 }); 
+
+// Observe each element
+fadeInElements.forEach(element => {
+  observer.observe(element);
+});
