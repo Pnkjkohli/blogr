@@ -88,6 +88,7 @@ body {
   overflow: auto;
   background: #fff;
   border-right: 1px solid #ede8f0;
+ 
 }
 .menu-wrap .user {
   height: 80px;
@@ -177,3 +178,26 @@ body {
   fill: #4b84fe;
 }
 /*  */
+
+#example_wrapper{
+ 
+
+   
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+  
+    padding: 20px 0 20px 50px;
+    grid-area: content;
+    margin: 38px;
+    overflow: scroll;
+}
+div.dt-container div.dt-layout-row {
+  display: flex
+;
+  justify-content: space-between;
+  align-items: center;
+  width: 48.5rem;
+  margin: 0.75em 0;
+}
