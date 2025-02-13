@@ -230,32 +230,32 @@ document.getElementById('submitbtn2').addEventListener('click', function(event){
 
   // alert("Data has been saved in local storage.");
 
-//   let data= {
-//     username: username,
-//     email: email,
-//     password: password,
+  let data= {
+    username: username,
+    email: email,
+    password: password,
 
-//   };
+  };
 
-//   // let jsondata = JSON.stringify(data);
-//   const JSONToFile = (obj, filename) => {
-//     const blob = new Blob([JSON.stringify(obj, null, 2)], {
-//       type: 'application/json',
-//     });
-//   // console.log(jsondata);
+  // let jsondata = JSON.stringify(data);
+  const JSONToFile = (obj, filename) => {
+    const blob = new Blob([JSON.stringify(obj, null, 2)], {
+      type: 'application/json',
+    });
+  // console.log(jsondata);
 
-//   const url = URL.createObjectURL(blob);
+  const url = URL.createObjectURL(blob);
 
-//   const a = document.createElement('a'); 
-//   a.href = url;
-//   a.download = `${filename}.json`;
-//   a.click();
-//   URL.revokeObjectURL(url);
-// };
+  const a = document.createElement('a'); 
+  a.href = url;
+  a.download = `${filename}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
 
-// JSONToFile({ test: data }, 'testJsonFile');
+JSONToFile({ test: data }, 'testJsonFile');
 // window.location.reload(true);
-window.open("file:///Users/poplify/Documents/project/blogr/dashbord.html")
+window.open("http://localhost:8888/blogr/dashbord.html")
 
   }
  
@@ -338,8 +338,8 @@ console.log(loginPassword);
       
   }else {
       // alert('You are loged in.');
-      window.open("file:///Users/poplify/Documents/project/blogr/dashbord.html")
-  }
+      window.open("http://localhost:8888/blogr/dashbord.html")
+    }
    });
 
 
