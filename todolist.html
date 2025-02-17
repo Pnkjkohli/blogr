@@ -33,14 +33,14 @@
   <div include-html="partial-dashboard.html" id="partial-dashboard_file"></div>
   <div class="todolist">
   <h1>My to do list</h1>
-  <input type="text" placeholder="enter the task.." id="inputText">  
+  <input type="text" placeholder="Enter the task.." id="inputText">  
   <span onclick="newElement()" class="addBtn" id="addBtn">Add</span>
 
   <!-- <ul id="tasklist">
   
   </ul> -->
-  <table id="tasklist">
-    <!-- <thead>
+  <table id="tasklist" style="display: none;">
+    <thead>
       <tr>
         <th>S.no.</th>
         <th>Task</th>
@@ -51,50 +51,16 @@
     <tbody>
   
     </tbody>
-  </table> -->
-  </div>
-  <!-- <div id="editModal" style="display:none;">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Edit Task</h2>
-      <textarea id="editTaskText" rows="4" cols="50"></textarea>
-      <button onclick="saveEdit()" class="savebtn">Save</button>
-    </div>
-  </div> -->
-
- 
-
-  <!-- <div class="todolist">
-    <h1>My To Do List</h1>
-    <input type="text" placeholder="Enter the task..." id="inputText">
-    <span onclick="newElement()" class="addBtn" id="addBtn">Add</span>
-
-    <table id="tasklist">
-      <thead>
-        <tr>
-          <th>Task</th>
-          <th>Created At</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-    
-      </tbody>
-    </table>
+  </table>
   </div>
 
-  <div id="editModal" style="display:none;">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Edit Task</h2>
-      <textarea id="editTaskText" rows="4" cols="50"></textarea>
-      <button onclick="saveEdit()">Save</button>
-    </div>
-  </div> -->
   
 
 
 </div>
+
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

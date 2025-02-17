@@ -193,168 +193,303 @@ for (i = 0; i < closelist.length; i++) {
 
 
 
+// function newElement() {
+//   var li = document.createElement("li");
+//   var inputValue = document.getElementById("inputText").value;
+//   var t = document.createTextNode(inputValue);
+
+//   var now = new Date();
+//   var dateStr = now.toLocaleString();
+
+//   var datenode = document.createTextNode("(" + dateStr + ")");
+
+//   console.log(t);
+//   li.appendChild(t);
+//   li.appendChild(datenode);
+
+//   if (inputValue === '') {
+//     alert("You must write something!");
+//   } else {
+//     document.getElementById("tasklist").appendChild(li);
+//   }
+
+//  document.getElementById("inputText").value = "";
+
+
+//   var table = document.getElementById("tasklist").getElementsByTagName('tbody')[0];
+//   var row = table.insertRow();
+//   var sno = row.insertCell(0);
+//   var taskCell = row.insertCell(1);
+//   var dateCell = row.insertCell(2);
+//   var actionCell = row.insertCell(3);
+
+//   var rowCount = table.rows.length;
+//   sno.textContent = rowCount;
+ 
+//   taskCell.textContent = inputValue;
+//   dateCell.textContent = dateStr;
+ 
+
+//   // Create the 'edit' icon
+//   var editSpan = document.createElement("SPAN");
+//   var editTxt = document.createTextNode("\u270E");  
+//   editSpan.className = "edit";
+//   editSpan.appendChild(editTxt);
+//   li.appendChild(editSpan);
+//   actionCell.appendChild(editSpan);
+
+//   // Create the 'close' icon
+//   var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+//   span.appendChild(txt);
+//   li.appendChild(span);
+//   actionCell.appendChild(span);
+
+//   // Edit task functionality (make it editable in place)
+//   editSpan.onclick = function() {
+//     // Make the task text editable by wrapping it in a contenteditable element
+//     var taskText = li.firstChild; 
+   
+   
+    
+//     console.log(taskText);
+//     if (taskText.nodeType === 3) { 
+   
+//       var editableText = document.createElement("span");
+//       editableText.setAttribute("contenteditable", "true");
+//       editableText.className = "editable-text";
+//       editableText.textContent = taskText.textContent;  // Set initial text
+
+//       li.replaceChild(editableText, taskText);  // Replace the text node with the editable span
+
+//       // Focus on the text field to edit
+//       editableText.focus();
+
+//       // Save on blur (clicking outside)
+//       editableText.onblur = function() {
+//         taskText.textContent = editableText.textContent;  
+//         li.replaceChild(taskText, editableText);  // Replace the editable span with text node
+//       };
+
+ 
+//       editableText.onkeydown = function(e) {
+//         if (e.key === 'Enter') {
+//           e.preventDefault();
+//           editableText.blur();
+//         }
+//       };
+//     }
+//   };
+
+//   // Close task functionality
+//   span.onclick = function() {
+//     var div = this.parentElement;
+//     div.style.display = "none";
+//   };
+// }
+
+
+
+
+
+// function newElement() {
+//   var li = document.createElement("li");
+//   var inputValue = document.getElementById("inputText").value;
+//   var t = document.createTextNode(inputValue);
+
+//   var now = new Date();
+//   var dateStr = now.toLocaleString();
+
+//   var datenode = document.createTextNode("(" + dateStr + ")");
+
+//   console.log(t);
+//   li.appendChild(t);
+//   li.appendChild(datenode);
+
+//   if (inputValue === '') {
+//     alert("You must write something!");
+//     table.style.display="none";
+//   } else {
+//     // document.getElementById("tasklist").appendChild(li);
+//   }
+
+//   document.getElementById("inputText").value = "";
+
+//   var table = document.getElementById("tasklist").getElementsByTagName('tbody')[0];
+//   var row = table.insertRow();
+//   var sno = row.insertCell(0);
+//   var taskCell = row.insertCell(1);
+//   var dateCell = row.insertCell(2);
+//   var actionCell = row.insertCell(3);
+
+//   var rowCount = table.rows.length;
+//   sno.textContent = rowCount;
+
+//   taskCell.textContent = inputValue;
+//   dateCell.textContent = dateStr;
+
+//   // Create the 'edit' icon
+//   var editSpan = document.createElement("SPAN");
+//   var editTxt = document.createTextNode("\u270E");  
+//   editSpan.className = "edit";
+//   editSpan.appendChild(editTxt);
+//   li.appendChild(editSpan);
+//   actionCell.appendChild(editSpan);
+
+//   // Create the 'close' icon
+//   var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+//   span.appendChild(txt);
+//   li.appendChild(span);
+//   actionCell.appendChild(span);
+
+//   // Add event listener for the edit icon
+//   editSpan.addEventListener('click', function() {
+//     // When clicked, replace the text with an input field
+//     var currentText = taskCell.textContent;
+//     var inputField = document.createElement("input");
+//     inputField.type = "text";
+//     inputField.value = currentText;
+
+  
+    
+//     // Replace the task cell content with the input field
+//     taskCell.innerHTML = '';
+//     taskCell.appendChild(inputField);
+    
+//     // Focus on the input field so the user can immediately start editing
+//     inputField.focus();
+    
+//     // Add an event listener to save the edited text when Enter key is pressed
+//     inputField.addEventListener('keydown', function(event) {
+//       if (event.key === 'Enter') {
+//         taskCell.textContent = inputField.value;
+//       }
+//     });
+    
+//     // Also, listen for blur (when the input loses focus)
+//     inputField.addEventListener('blur', function() {
+//       taskCell.textContent = inputField.value;
+//     });
+//   });
+
+//   // Add event listener for the close icon
+//   span.addEventListener('click', function() {
+//     row.remove(); // Removes the task from the list
+//     // document.getElementById("inputText").value = "";
+
+//   });
+// }
+
+
 function newElement() {
-  var li = document.createElement("li");
+  var tasklist= document.getElementById('tasklist').style.display="";
+  var tasklist= document.getElementById('tasklist').style.width="96%";
   var inputValue = document.getElementById("inputText").value;
-  var t = document.createTextNode(inputValue);
-
-  var now = new Date();
-  var dateStr = now.toLocaleString();
-
-  var datenode = document.createTextNode("(" + dateStr + ")");
-
-  console.log(t);
-  li.appendChild(t);
-  li.appendChild(datenode);
-
+ 
+  // If no value is entered, show an alert
   if (inputValue === '') {
     alert("You must write something!");
-  } else {
-    document.getElementById("tasklist").appendChild(li);
+    return;
   }
 
- document.getElementById("inputText").value = "";
+
+  // Create a new row in the table
+  var table = document.getElementById("tasklist").getElementsByTagName('tbody')[0];
+  var row = table.insertRow();
+  // Insert cells for the row
+  var sno = row.insertCell(0);
+  var taskCell = row.insertCell(1);
+  var dateCell = row.insertCell(2);
+  var actionCell = row.insertCell(3);
+
+  // Get the current row count for serial number
+  var rowCount = table.rows.length;
+  sno.textContent = rowCount;
+
+  // Date and task content
+  taskCell.textContent = inputValue;
+taskCell.id="newinput";
+
+  var dueDateInput = document.createElement("input");
+  dueDateInput.type = "date";
 
 
-  // var table = document.getElementById("tasklist").getElementsByTagName('tbody')[0];
-  // var row = table.insertRow();
-  // var sno = row.insertCell(0);
-  // var taskCell = row.insertCell(1);
-  // var dateCell = row.insertCell(2);
-  // var actionCell = row.insertCell(3);
-
-  // var rowCount = table.rows.length;
-  // sno.textContent = rowCount;
+  var today = new Date().toISOString().split('T')[0]; // Format to yyyy-mm-dd
+  dueDateInput.value = today;
  
-  // taskCell.textContent = inputValue;
-  // dateCell.textContent = dateStr;
- 
 
-  // Create the 'edit' icon
+  dateCell.appendChild(dueDateInput);
+
+  dueDateInput.setAttribute("disabled", "");
+
+  
+  // Create the 'edit' 
   var editSpan = document.createElement("SPAN");
   var editTxt = document.createTextNode("\u270E");  
   editSpan.className = "edit";
   editSpan.appendChild(editTxt);
-  li.appendChild(editSpan);
-  // actionCell.appendChild(editSpan);
+  actionCell.appendChild(editSpan);
+  
 
-  // Create the 'close' icon
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-  // actionCell.appendChild(span);
+  // Create the 'close' 
+  var closeSpan = document.createElement("SPAN");
+  var closeTxt = document.createTextNode("\u00D7");
+  closeSpan.className = "close";
+  closeSpan.appendChild(closeTxt);
+  actionCell.appendChild(closeSpan);
 
-  // Edit task functionality (make it editable in place)
-  editSpan.onclick = function() {
-    // Make the task text editable by wrapping it in a contenteditable element
-    var taskText = li.firstChild; 
-    // The task text node
-    
-    console.log(taskText);
-    if (taskText.nodeType === 3) { 
-   
-      var editableText = document.createElement("span");
-      editableText.setAttribute("contenteditable", "true");
-      editableText.className = "editable-text";
-      editableText.textContent = taskText.textContent;  // Set initial text
 
-      li.replaceChild(editableText, taskText);  // Replace the text node with the editable span
 
-      // Focus on the text field to edit
-      editableText.focus();
-
-      // Save on blur (clicking outside)
-      editableText.onblur = function() {
-        taskText.textContent = editableText.textContent;  
-        li.replaceChild(taskText, editableText);  // Replace the editable span with text node
-      };
 
  
-      editableText.onkeydown = function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          editableText.blur();
-        }
-      };
-    }
-  };
+  editSpan.addEventListener('click', function() {
+    var currentText = taskCell.textContent;
+    var inputField = document.createElement("input");
+    inputField.type = "text";
+    inputField.value = currentText;
+  
+    dueDateInput.removeAttribute("disabled");
 
-  // Close task functionality
-  span.onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
+    taskCell.innerHTML = '';
+    taskCell.appendChild(inputField);
+
+    // Focus on the input field
+    inputField.focus();
+  
+   
+    inputField.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        taskCell.textContent = inputField.value;
+      }
+      dueDateInput.setAttribute("disabled", "");
+      
+    });
+
+ 
+    inputField.addEventListener('blur', function() {
+      taskCell.textContent = inputField.value;
+    });
+  
+  });
+
+ 
+  closeSpan.addEventListener('click', function() {
+    row.remove(); // Remove the specific row when clicked
+
+  //   var thead = document.getElementsByTagName('thead')[0];
+  //   var tbody = document.getElementsByTagName('tbody')[0];
+
+  //  if (tbody.rows.length === 0) {
+  //   thead.style.display = "none";
+  //  }
+
+  });
+
+  // Clear the input field
+  document.getElementById("inputText").value = "";
 }
 
-
-// let currentTaskElement = null;  
-
-// function newElement() {
-//   var inputValue = document.getElementById("inputText").value;
-  
-//   if (inputValue === '') {
-//     alert("You must write something!");
-//     return;
-//   }
-
-//   var table = document.getElementById("tasklist").getElementsByTagName('tbody')[0];
-//   var row = table.insertRow();
-//   var taskCell = row.insertCell(0);
-//   var dateCell = row.insertCell(1);
-//   var actionCell = row.insertCell(2);
-
-//   var now = new Date();
-//   var dateStr = now.toLocaleString();
-  
-//   taskCell.textContent = inputValue;
-//   dateCell.textContent = dateStr;
-
-//   // Create the 'edit' button
-//   var editBtn = document.createElement("button");
-//   editBtn.textContent = "Edit";
-//   editBtn.className = "editBtn";
-//   actionCell.appendChild(editBtn);
-
-//   // Create the 'delete' button
-//   var deleteBtn = document.createElement("button");
-//   deleteBtn.textContent = "Delete";
-//   deleteBtn.className = "deleteBtn";
-//   actionCell.appendChild(deleteBtn);
-
-//   // Edit task button functionality
-//   editBtn.onclick = function() {
-//     openModal(inputValue, row);  // Pass the current task and the row
-//   };
-
-//   // Delete task button functionality
-//   deleteBtn.onclick = function() {
-//     table.deleteRow(row.rowIndex);  // Remove the row
-//   };
-
-//   // Clear input field after adding the task
-//   document.getElementById("inputText").value = "";
-// }
-
-// // Open the modal to edit a task
-// function openModal(taskText, taskRow) {
-//   currentTaskElement = taskRow;  // Save the row being edited
-//   document.getElementById("editTaskText").value = taskText;
-//   document.getElementById("editModal").style.display = "block";
-// }
-
-// // Close the modal
-// function closeModal() {
-//   document.getElementById("editModal").style.display = "none";
-// }
-
-// // Save the edited task
-// function saveEdit() {
-//   if (currentTaskElement) {
-//     var editedText = document.getElementById("editTaskText").value;
-//     currentTaskElement.cells[0].textContent = editedText;  // Update the task in the table
-//     closeModal();
-//   }
-// }
 
